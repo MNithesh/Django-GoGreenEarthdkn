@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'x3p_)9aos4zqr&wqovn_$81pf@=2ppwlol0+0!ie(&uh$h#aw$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gogreenearthdkn.herokuapp.com/','www.gogreenearthdkn.herokuapp.com/']
 
 
 # Application definition
