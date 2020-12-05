@@ -1,0 +1,85 @@
+{% extends 'basic.html' %} 
+{% block title %} 
+Signup 
+{% endblock title %} 
+{% block body %} 
+{% load static %}
+{% load socialaccount %}
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="bg-light text-success text-center">Sign Up</h3>
+      <div class="jumbotron">
+        <form action="/signup" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              placeholder="Username must be alpha-numeric"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="fname"
+              id="fname"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lname"
+              id="lname"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="pass1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="pass1"
+              id="pass1"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="pass2">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="pass2"
+              id="pass2"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm btn-block">
+            Sigup
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6"><img src="{% static 'images/img4.png' %}" class="d-block w-100 " style="height:600px;" alt="..."></div>
+  </div>
+</div>
+{% endblock body %}

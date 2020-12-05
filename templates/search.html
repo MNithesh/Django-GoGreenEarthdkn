@@ -1,0 +1,44 @@
+{% extends 'basic.html' %} 
+{% block title %} 
+Search 
+{% endblock title %} 
+{% block body %}
+<div class="container my-3">
+
+<h3>Search Results.....</h3>
+
+{% if allPosts|length < 1  %}
+
+Your Search <b>{{query}} </b> did not match any information
+
+<br>
+Suggestions:
+<ul>
+
+<li>
+Make Sure That All Words Are Spelled Correctly
+</li>
+
+</ul>
+
+{% endif %}
+
+{% for  post in allPosts %}
+ <div class="col mb-4">
+    <div class="card">
+      <img src="{{post.img.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}} <b>{{post.timeStamp}}</b></h5>
+        <p class="card-text">{{post.description}}</p>
+        <hr>
+        <h6 class="bg-danger text-white py-1 px-1">Posted By : {{post.authorname}}</h6>
+      </div>
+    </div>
+  </div>
+
+
+{% endfor %}
+
+</div>
+
+{% endblock body %}
